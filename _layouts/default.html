@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=block" type="text/css"/>
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css"/>
+    <title>David Xu</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165580780-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-165580780-3');
+    </script>
+
+    <meta property="og:image:alt" content="DavidXu.tech Icon"/>
+    <meta property="og:type" content="website"/>
+
+    {% seo title=false %}
+</head>
+<body>
+    <!--Header-->
+    <header class="pageHeader">
+        <div class="pageName">David Xu</div>
+        <div class="socialLinks">
+            <a href="https://github.com/Dx724">
+                <img src="/assets/img/GitHub-Mark-120px-plus.png" alt="GitHub"/>
+            </a>
+            <a href="https://www.linkedin.com/in/davidxucu/">
+                <img src="/assets/img/LI-In-Bug.png" alt="LinkedIn"/>
+            </a>
+        </div>
+    </header>
+
+    {{ content }}
+</body>
+</html>

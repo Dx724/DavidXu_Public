@@ -1,0 +1,171 @@
+$gutter-size: 10px;
+$num-cols: 3;
+$side-space: 10;
+$column-width: 100 / $num-cols;
+$item-diff: ($gutter-size * ($num-cols + 1) / $num-cols);
+
+$accent-color: rgba(30, 30, 180, 1);
+$header-sizing: 2.25rem;
+
+$card-transition-duration: 0.5s;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Khula", sans-serif;
+}
+
+a {
+    color: $accent-color;
+}
+
+.pageHeader {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    $horizPadding: 3%;
+    padding-left: $horizPadding;
+    padding-right: $horizPadding;
+    $verticalPadding: 5px;
+    //box-shadow: 0px 1px 9px 5px $accent-color;
+    padding-top: 5px + $verticalPadding;
+    padding-bottom: $verticalPadding;
+    border-bottom: 5px solid $accent-color;
+    margin-bottom: 15px;
+}
+
+.pageName {
+    display: inline-block;
+    line-height: $header-sizing;
+    font-size: $header-sizing;
+}
+
+.socialLinks {
+    display: inline-block;
+    > a {
+        text-decoration: none;
+        > img {
+            display: inline-block;
+            height: $header-sizing * 0.9;
+            margin-left: 10px;
+        }
+    }
+}
+
+.card-container {
+    box-sizing: border-box;
+    margin: 0 auto; //auto ==> $side-space * 1%
+    width: (100 - $side-space * 2) * 1%;
+    padding: $gutter-size;
+}
+
+#gutter-sizer {
+    width: $gutter-size;
+}
+
+.sizer {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 0 !important;
+    box-shadow: none !important;
+    border: none !important; //This is fine because box-sizing is border-box for tiled-card. Otherwise should just set opacity.
+}
+
+.tiled-card {
+    box-sizing: border-box;
+    margin: 0;
+    width: 0;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.35);
+    padding: 20px 15px;
+    display: inline-block;
+    margin-bottom: $gutter-size;
+    width: calc((1% * #{$column-width}) - #{$item-diff});
+    transition: width $card-transition-duration, z-index $card-transition-duration; //Note: z-index transition may experience odd effects if other z-index'd elements are introduced
+    z-index: 0;
+}
+@media only screen and (max-width: 800px) {
+    .tiled-card {
+        width: calc(100% - #{$gutter-size} * 2);
+    }
+}
+
+.tiled-card.project-card {
+    background-color: white;
+    //cursor: zoom-in; //Should a pointer be used instead?
+    transition: box-shadow 0.2s;
+    &:hover {
+        box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.55);
+    }
+}
+
+.tiled-card.project-card.active-card {
+    //cursor: zoom-out;
+}
+
+.card-title {
+    font-size: 125%;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.hosted-link {
+    text-decoration: none;
+}
+
+.card-sub {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.small-card > .card-content {
+    height: 0px;
+}
+
+.active-card {
+    z-index: 5;
+}
+
+.card-content {
+    transition: height $card-transition-duration;
+    overflow: hidden;
+    p, ul {
+        margin: 3px 0px;
+    }
+    ul {
+        padding-left: 1.5em;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.tiled-card.story-card {
+    z-index: 1;
+    background-color: $accent-color;
+    border: 3px solid white;
+    //width: calc(((1% * #{$column-width}) - #{$item-diff})*2 + #{$gutter-size});
+    color: white;
+    a {
+        color: white;
+    }
+
+    font-size: 150%;
+    font-weight: 600;
+}
+.story-card ~ .story-card { //Every story card after the first
+    background-color: white;
+    border-color: $accent-color;
+    color: $accent-color;
+    a {
+        color: $accent-color;
+    }
+}

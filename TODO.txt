@@ -1,0 +1,29 @@
+﻿Add paper for digitizationpen
+Add paper for sensorsheet
+Add images
+DONE Reference other page for what to put in default template
+
+DONE Constrain cards within header padding box
+
+DONE Masonry
+DONE Mobile support
+
+DONE Add favicon
+DONE Add Google Analytics
+DONE Render hosted links as button? 🔗
+Detect font load on other browsers using height changes
+DONE (using selected text detection) Make text select possible via mousedown mouseup delta detection
+
+Track which hostedlink's are clicked?
+
+Anchor tags -- scroll to and open automatically
+
+-- Long Range --
+Filter by ptags
+Display tech used
+Display name with interactive particles?
+Change scrollTo to a smooth scroll for IE
+
+-- Maybe include --
+DONE Scroll to active card if out of view on rotate/resize?
+DONE Smooth scroll

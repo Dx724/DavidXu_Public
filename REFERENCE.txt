@@ -1,0 +1,13 @@
+---
+ordering_key: 1
+title: Collecture
+dinfo: May 2020
+ptags: code hosted circuit math research ml
+tech: angular js web c c# matlab python unity node react-native socket-io webrtc jekyll haptics java swift ble logisim assembly machine-code leap-motion react electron webassembly webgpu postgresql c++ tensorflow uwb processing raspberrypi esp32 esp8266 sonicpi espnow ruby rails sidekiq
+oneline: A searchable collection of university lecture videos
+hostedlink: https://collecture.org/
+cssclass: layout_colmid
+---
+
+Note "circuit" is also used for VirtuAlso and Lantern Display, projects which use some hardware.
+While Nutriscient also features app, database, and server components, the majority of the work I did was on the embedded systems side
